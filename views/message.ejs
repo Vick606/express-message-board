@@ -13,14 +13,14 @@
     </header>
     <main>
         <div class="message-detail">
-            <h2><i class="fas fa-user"></i> Message from <%= message.user %></h2>
-            <p class="message-text"><%= message.text %></p>
-            <p class="message-date"><i class="fas fa-calendar-alt"></i> Posted on: <%= message.added.toLocaleString() %></p>
+            <h2><i class="fas fa-user-circle"></i> Message from <%= message.user %></h2>
+            <p class="message-text"><i class="fas fa-quote-left"></i> <%= message.text %> <i class="fas fa-quote-right"></i></p>
+            <p class="message-date"><i class="far fa-calendar-alt"></i> Posted on: <%= message.added.toLocaleString() %></p>
         </div>
         <a href="/" class="btn"><i class="fas fa-arrow-left"></i> Back to Messages</a>
     </main>
     <footer>
-        Made with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i> by Vickoch20
+        Made with <i class="fas fa-heart"></i> and <i class="fas fa-mug-hot"></i> by Vickoch20
     </footer>
 </body>
 </html>
