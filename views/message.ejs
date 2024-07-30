@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <div>
+        <h2>Message from <%= message.user %></h2>
+        <p><%= message.text %></p>
+        <p>Posted on: <%= message.added.toLocaleString() %></p>
+    </div>
+    <a href="/">Back to Messages</a>
+</body>
+</html>
