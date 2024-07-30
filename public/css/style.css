@@ -154,3 +154,27 @@ textarea {
 .message-item, .message-form, .message-detail {
     animation: fadeIn 0.5s ease-in-out;
 }
+footer i {
+    color: #e74c3c;
+    margin: 0 5px;
+}
+
+.intro-message {
+    background-color: #f39c12;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.tech-stack {
+    font-weight: bold;
+    color: #2c3e50;
+}
