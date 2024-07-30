@@ -11,6 +11,8 @@ app.set('views', path.join(__dirname, 'views'));
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Sample messages array
 const messages = [
   {
