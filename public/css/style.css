@@ -155,12 +155,12 @@ textarea {
     animation: fadeIn 0.5s ease-in-out;
 }
 footer i {
-    color: #e74c3c;
+    color: hsl(92, 78%, 57%);
     margin: 0 5px;
 }
 
 .intro-message {
-    background-color: #f39c12;
+    background-color: #b5428f;
     color: white;
     padding: 1rem;
     border-radius: 5px;
