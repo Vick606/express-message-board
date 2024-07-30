@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/all.min.css">
 </head>
 <body>
-    <h1><%= title %></h1>
-    <a href="/new">Add New Message</a>
-    <ul>
-        <% messages.forEach(message => { %>
-            <li>
-                <strong><%= message.user %></strong>: 
-                <%= message.text %> 
-                <small>(<%= message.added.toLocaleString() %>)</small>
-                <a href="/message/<%= message.id %>">Open</a>
-            </li>
-        <% }); %>
-    </ul>
+    <header>
+        <h1><i class="fas fa-comments"></i> <%= title %></h1>
+    </header>
+    <main>
+        <a href="/new" class="btn"><i class="fas fa-plus"></i> Add New Message</a>
+        <ul class="message-list">
+            <% messages.forEach(message => { %>
+                <li class="message-item">
+                    <div class="message-content">
+                        <strong><i class="fas fa-user"></i> <%= message.user %></strong>: 
+                        <%= message.text %> 
+                        <small><i class="fas fa-clock"></i> <%= message.added.toLocaleString() %></small>
+                    </div>
+                    <a href="/message/<%= message.id %>" class="btn btn-small"><i class="fas fa-external-link-alt"></i> Open</a>
+                </li>
+            <% }); %>
+        </ul>
+    </main>
+    <footer>
+        Made with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i> by Vickoch20
+    </footer>
 </body>
 </html>
