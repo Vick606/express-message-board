@@ -9,16 +9,18 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Middleware to parse form data
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 // Sample messages array
 const messages = [
   {
+    id: 1,
     text: "Hi there!",
     user: "Amando",
     added: new Date()
   },
   {
+    id: 2,
     text: "Hello World!",
     user: "Charles",
     added: new Date()
@@ -38,8 +40,20 @@ app.get('/new', (req, res) => {
 // Handle new message submission
 app.post('/new', (req, res) => {
   const { user, text } = req.body;
-  messages.push({ text, user, added: new Date() });
+  const id = messages.length + 1;
+  messages.push({ id, text, user, added: new Date() });
   res.redirect('/');
+});
+
+// Message details route
+app.get('/message/:id', (req, res) => {
+  const messageId = parseInt(req.params.id);
+  const message = messages.find(m => m.id === messageId);
+  if (message) {
+    res.render('message', { title: "Message Details", message });
+  } else {
+    res.status(404).send('Message not found');
+  }
 });
 
 app.listen(port, () => {
